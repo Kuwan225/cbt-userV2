@@ -1,0 +1,9 @@
+.container{
+    border-radius: 10px;
+    transition: .3s;
+    &:hover{
+        background: #0A85ED;
+        scale: 103%;
+        color: white;
+    }
+}

@@ -1,0 +1,74 @@
+.container-header {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 50px;
+  .title {
+    margin-bottom: 50px;
+    font-family: "Karla";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 35px;
+    color: white;
+    text-align: center;
+  }
+
+  .container-card {
+    position: relative;
+    overflow: hidden;
+    width: 580px;
+    padding: 10px 20px;
+    background: #ffffff;
+    box-shadow: 0px 1px 23px 5px rgba(0, 0, 0, 0.15);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+
+    img {
+      margin-right: 30px;
+    }
+
+    .button {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      border-bottom-left-radius: 30px;
+      border-top-right-radius: 30px;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container-header {
+    padding-top: 20px;
+    margin-bottom: 30px;
+    .title {
+      font-size: 30px;
+    }
+    .container-card {
+      width: 100%;
+      padding: 10px 20px;
+      margin-top: -30px;
+      img {
+        width: 100px;
+        margin-right: 10px;
+      }
+      h1 {
+        font-size: 1.3rem;
+      }
+      .ready{
+        margin-top: -10px;
+        margin-bottom: -7px;
+      }
+      .button {
+        position: relative;
+        display: flex;
+        align-self: flex-start;
+        justify-self: flex-end;
+        right: -5px;
+        top: -0px;
+      }
+    }
+  }
+}

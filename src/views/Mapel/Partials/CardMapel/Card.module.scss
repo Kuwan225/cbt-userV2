@@ -1,0 +1,42 @@
+.container {
+  display: flex;
+  width: 100%;
+  cursor: pointer;
+  border: 1px solid gray;
+  border-radius: 12px;
+  overflow: hidden;
+  height: 75px;
+  .boxImage {
+    width: 84px;
+    background-color: gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      padding: 25px;
+    }
+    .book-on {
+      display: none;
+    }
+  }
+
+  .box {
+    width: 100%;
+    padding: 10px 0 0 10px;
+    color: gray;
+    &:hover {
+      background-color: #08b7f6;
+      color: white;
+    }
+  }
+  .container:hover .book-on {
+    display: block;
+  }
+  .container:hover .book-off {
+    display: none;
+  }
+  .container:hover .boxImage {
+    background-color: white;
+  }
+}

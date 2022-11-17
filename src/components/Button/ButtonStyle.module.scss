@@ -1,0 +1,17 @@
+.primary {
+    :global {
+        .ant-btn {
+         border: none;   
+         background-image: linear-gradient(to bottom right, #9C6644, #7F5539);
+         color: white;
+         font-weight: 200;
+         width: 100%;
+         height: 46px;
+         border-radius: 8px;
+        }
+        .ant-btn:hover  {
+            border: none;
+            color: white;
+        }
+    }   
+}
