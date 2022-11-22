@@ -1,3 +1,17 @@
-.container-footer{
-    
+.container-footer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+@media screen and (max-width: 600px) {
+  .container-footer {
+    p {
+      font-size: 10px;
+    }
+    img {
+      width: 17px;
+      margin-top: -15px;
+    }
+  }
 }

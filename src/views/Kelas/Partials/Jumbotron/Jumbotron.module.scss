@@ -1,7 +1,11 @@
+.container{
+display: flex;
+    align-items: center;
+}
+
 @media screen and (max-width: 600px) {
   .container {
-    display: flex;
-    align-items: center;
+    
     margin-bottom: -30px;
     img {
       width: 100px;

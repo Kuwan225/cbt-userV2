@@ -1,30 +1,37 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Container from "../../layout/container/Container";
 import CardKelas from "./Partials/CardKelas/CardKelas";
 import { useRouter } from "next/router";
 import axios from "axios";
 import Jumbotron from "./Partials/Jumbotron/Jumbotron";
+import { PublicContext } from "../../layout/core";
 
 const Kelas = () => {
-  const route = useRouter();
-  console.log(route.query.id);
-
   const [dataTingkatan, setDataTingkatan] = useState([]);
-
-  console.log(dataTingkatan);
+  const route = useRouter();
+  const ctx = useContext(PublicContext);
 
   useEffect(() => {
+    ctx.setIsLoading(true);
     axios
       .get(`https://vanilla-cbt.smkyadikasrg.repl.co/v1/tingkatan`)
       .then((res) => {
+        ctx.setIsLoading(false);
         setDataTingkatan(res.data.data);
       });
   }, []);
 
   return (
     <Container>
-      <Jumbotron/>
-      <div style={{ display: "flex", gap: 20,flexWrap:'wrap',justifyContent:"center" }}>
+      <Jumbotron />
+      <div
+        style={{
+          display: "flex",
+          gap: 20,
+          flexWrap: "wrap",
+          justifyContent: "center",
+        }}
+      >
         {dataTingkatan.map((res) => {
           return <CardKelas item={res} />;
         })}

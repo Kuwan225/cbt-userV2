@@ -25,6 +25,10 @@
     display: flex;
     align-items: center;
 
+    h1 {
+      font-weight: 800;
+    }
+
     img {
       margin-right: 30px;
     }
@@ -57,7 +61,7 @@
       h1 {
         font-size: 1.3rem;
       }
-      .ready{
+      .ready {
         margin-top: -10px;
         margin-bottom: -7px;
       }

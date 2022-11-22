@@ -1,29 +1,25 @@
 import Card from "antd/lib/card/Card";
+import Link from "next/link";
 import { useRouter } from "next/router";
-import React from "react";
+import React, { useContext } from "react";
+import { PublicContext } from "../../../../layout/core";
 import Styles from "./Card.module.scss";
 
 const CardKelas = ({ item }: any) => {
   const route = useRouter();
+  const ctx = useContext(PublicContext);
+
   return (
+    <Link href={`${route.query.jurusan}/${item.tingkatan}`}>
       <Card
         onClick={() => {
-          route.push(`${route.query.jurusan}/${item.tingkatan}`)
+          ctx.setIsLoading(true);
         }}
         className={Styles.container}
-        style={{
-          cursor: "pointer",
-          width: 100,
-          height: 100,
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          fontWeight: 700,
-          fontSize: 25,
-        }}
       >
         {item.tingkatan}
       </Card>
+    </Link>
   );
 };
 
