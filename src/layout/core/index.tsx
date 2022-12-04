@@ -6,13 +6,13 @@ interface TypeContext {
   setIsLoading: (value: boolean) => void;
 }
 export const PublicContext = React.createContext<TypeContext>({
-  isLoading: true,
+  isLoading: false,
   setIsLoading: (_value: boolean) => {},
 });
 
 const LayoutDefault = (props: AppProps) => {
   const { Component, pageProps } = props;
-  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   return (
     <PublicContext.Provider

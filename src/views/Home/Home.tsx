@@ -6,22 +6,34 @@ import { PublicContext } from "../../layout/core";
 import CardJurusan from "./Partials/CardJurusan/CardJurusan";
 
 const Home: NextPage = () => {
-  const [dataJurusan, setDataJurusan] = useState([]);
-  const ctx = useContext(PublicContext);
+  // const [dataJurusan, setDataJurusan] = useState([]);
+  // const ctx = useContext(PublicContext);
 
-  useEffect(() => {
-    ctx.setIsLoading(true);
-    axios
-      .get(`https://vanilla-cbt.smkyadikasrg.repl.co/v1/jurusan`)
-      .then((res) => {
-        setDataJurusan(res.data.data);
-        ctx.setIsLoading(false);
-      });
-  }, []);
+  // useEffect(() => {
+  //   ctx.setIsLoading(true);
+  //   axios
+  //     .get(`https://vanilla-cbt.smkyadikasrg.repl.co/v1/jurusan`)
+  //     .then((res) => {
+  //       setDataJurusan(res.data.data);
+  //       ctx.setIsLoading(false);
+  //     });
+  // }, []);
+
+  const dataJurusan = [
+    {
+      jurusan: "Rekayasa Perangkat Lunak",
+    },
+    {
+      jurusan: "Perhotelan",
+    },
+    {
+      jurusan: "Akuntansi",
+    },
+  ];
   return (
     <Container>
-      {dataJurusan.map((el) => {
-        return <CardJurusan item={el} />;
+      {dataJurusan.map((el, idx) => {
+        return <CardJurusan key={idx} item={el} />;
       })}
     </Container>
   );
